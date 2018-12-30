@@ -35,5 +35,18 @@ namespace File_Syncing_Tool
         {
             textBox4.Text = ""; // Clean up the Textbox text by giving a empty value instead of null
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.Icon = Properties.Resources.Tray;
+            notifyIcon1.ShowBalloonTip(5000,"File Syncing Tool","The software is now minimized on the system tray. Click on it to show the UI again.",ToolTipIcon.Info);
+            Hide();
+        }
+
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+            Show();
+            notifyIcon1.Visible = false;
+        }
     }
 }
